@@ -1,0 +1,343 @@
+html,body {
+    height: 100%;
+}
+
+body {
+    font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+}
+
+#splash {
+    /*fixedで全面に固定*/
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	background:#f1dcdc;
+	text-align:center;
+	color:#fc6dc0;
+}
+
+/* Loadingバー中央配置　*/
+#splash_text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+    z-index: 999;
+	width: 100%;
+	transform: translate(-50%, -50%);
+	color: #fff;
+}
+
+#logo {
+    width: 400px;
+    height: 70px;
+    margin: 50px auto;
+    padding: 50px auto;
+}
+
+#particles-js {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 700px;
+
+}
+
+#wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: url(../images/hanabira.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+}
+
+
+#pc-menu {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.center {
+    width: 5%;
+    padding: 10px;
+  }
+  
+  .left,
+  .right {
+    width: 35%;
+    padding: 10px;
+  }
+
+
+
+  .right nav ul li {
+    list-style: none;
+    padding-top: 50px;
+    font-size: 34px;
+    font-weight: bold;
+  }
+
+  .right nav ul li a {
+    text-decoration: none;
+    color: #826060;    
+  }
+
+ .menu-list a:hover {
+    cursor: pointer;
+    color: #4FBCDE;
+  }
+
+  .menu-list li a{
+    /*テキストの基点とするためrelativeを指定*/
+	position: relative;
+    /*はみ出る要素を隠す*/
+	overflow: hidden;
+	padding:10px 60px;
+}
+
+.menu-list li span{
+    /*絶対配置でテキストの位置を決める*/
+	position: absolute;
+	left: 50%;
+	top:0;
+    /*アニメーションの指定*/
+	transition: all .5s;
+	transform: translate(0, 0);/*X方向に-50% ※中央寄せにするため*/
+  /*ブロック要素にして透過なし、テキスト折り返しなし*/  
+	display: block;
+	opacity:1;
+	white-space: nowrap;
+}
+
+/*差し替わるテキストの設定*/
+.menu-list li span:nth-child(2){
+	opacity:0;/*透過0に*/
+    transform: translate(0,100%);/*X方向に-50% Y方向に100%*/
+}
+
+/*hoverするとテキストが入れ替わる設定*/
+.menu-list li:hover span:nth-child(1){
+	opacity:0;/*透過0に*/
+    transform: translate(0,-100%);/*X方向に-50% Y方向に-100%*/
+}
+
+.menu-list li:hover span:nth-child(2){
+	opacity:1;/*不透明に*/
+	transform: translate(0, 0);/*X方向に-50% Y方向に0*/
+}
+
+
+h2 {
+    font-size: 30px;
+    margin-top: 100px;
+    text-align: center;
+    color: #826060; 
+
+}
+
+#me {
+    width: 100%;
+    height: 500px;
+    background: url(../images/sakurahana.png);
+    background-color: #fff;
+    display: flex;
+}
+
+.icon img {
+    width: 300px;
+    height: 300px;
+}
+
+#me .left {
+  width: 40%;
+  padding: 10px;
+  margin-top: 80px;
+  text-align: right;
+}
+
+#me .right {
+    width: 40%;
+    padding: 10px;
+    margin-top: 80px;
+    margin-left: 100px;
+    text-align: left;
+    line-height: 3rem;
+}
+
+.intro {
+    text-align: center;
+    font-weight: 400;
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+#center {
+    display: flex;
+    justify-content: center;
+}
+
+.worksitem2 {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.worksitem p {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.worksitem2 p {
+    text-align: center;
+    padding-top: 20px;
+}
+
+
+
+
+.glowAnime span{opacity: 0;}
+
+/*アニメーションで透過を0から1に変化させtext-shadowをつける*/
+.glowAnime.glow span{ animation:glow_anime_on 1s ease-out forwards; }
+
+@keyframes glow_anime_on{
+	0% { opacity:0; text-shadow: 0 0 0 #f8d6d6,0 0 0 #ee6969;}
+	50% { opacity:1;text-shadow: 0 0 10px #f888c9,0 0 15px #ee59b5; }
+	100% { opacity:1; text-shadow: 0 0 0 #5fe4ee,0 0 0 #1bc5db;}
+}
+
+h4 {
+    text-align: center;
+    color: #826060; 
+    font-size: 30px;
+    margin-top: 80px;
+}
+
+#skillintro {
+    display: flex;
+    justify-content: center;
+    padding: 100px;
+}
+
+
+.skillsitem img {
+    margin-bottom: 30px;
+}
+
+.skillsitem2 img {
+    margin-bottom: 30px;
+}
+
+.skillsitem2 {
+    padding-left: 50px;
+    padding-right: 70px;
+}
+
+.skillsitem p {
+    text-align: center;
+    font-size: 14px;
+}
+
+.skillsitem2 p {
+    text-align: center;
+    font-size: 14px;
+}
+
+.skillsitem span {
+    font-size: 18px;
+    margin-top: 50px;
+    padding-top: 50px;
+}
+
+.skillsitem2 span {
+    font-size: 18px;
+    margin-top: 50px;
+    padding-top: 50px;
+}
+
+.leftpro {
+    width: 40%;
+    padding: 10px;
+}
+
+
+
+#skillintro2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 100px;
+}
+
+.third img {
+    padding-left: 40px;
+}
+
+.leftdesign {
+    width: 35%;
+    padding: 10px;
+}
+
+
+
+#skillintro3 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 100px;
+}
+
+
+.photos {
+    width: 800px;
+    height: 100%;
+}
+
+.p-photo {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#photolist {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.gallery-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    width: 800px;
+    height: auto;
+    margin-top: 80px;
+}
+
+.gallery-list img {
+    width: 180px;
+    height: 150px;
+    display: flex;
+}
+
+.hide-area{
+	display: none;
+}
+
+/*全て共通：モーダルのボタンの色を変更したい場合*/
+.modaal-close:after, 
+.modaal-close:before{
+	background:#ccc;	
+}
+
+.modaal-close:focus:after,
+.modaal-close:focus:before,
+.modaal-close:hover:after,
+.modaal-close:hover:before{
+	background:#666;
+}
