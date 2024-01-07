@@ -29,66 +29,150 @@ bar.animate(1.0, function () {//バーを描画する割合を指定します 1.
 });  
 
 
-$('#page-link a[href*="#"]').click(function () {//全てのページ内リンクに適用させたい場合はa[href*="#"]のみでもOK
+
+$(function(){
+  var pagetop = $('#page-top');
+  pagetop.hide();
+  $(window).scroll(function () {
+     if ($(this).scrollTop() > 100) {
+          pagetop.fadeIn();
+     } else {
+          pagetop.fadeOut();
+     }
+  });
+  pagetop.click(function () {
+     $('body, html').animate({ scrollTop: 0 }, 500);
+     return false;
+  });
+});
+
+
+
+
+$('a[href*="#"]').click(function () {//全てのページ内リンクに適用させたい場合はa[href*="#"]のみでもOK
 	var elmHash = $(this).attr('href'); //ページ内リンクのHTMLタグhrefから、リンクされているエリアidの値を取得
 	var pos = $(elmHash).offset().top;	//idの上部の距離を取得
-	$('body,html').animate({scrollTop: pos}, 500); //取得した位置にスクロール。500の数値が大きくなるほどゆっくりスクロール
+	$('body,html').animate({scrollTop: pos}, 900); //取得した位置にスクロール。500の数値が大きくなるほどゆっくりスクロール
 	return false;
 });
 
-// glowAnimeにglowというクラス名を付ける定義
-function GlowAnimeControl() {
-	$('.glowAnime').each(function () {
-		var elemPos = $(this).offset().top - 50;
+
+
+
+
+// smoothTriggerにsmoothTextAppearというクラス名を付ける定義
+function SmoothTextAnime() {
+	$('.smoothTextTrigger').each(function(){ //smoothTextTriggerというクラス名が
+		var elemPos = $(this).offset().top-50;//要素より、50px上の
 		var scroll = $(window).scrollTop();
 		var windowHeight = $(window).height();
-		if (scroll >= elemPos - windowHeight) {
-			$(this).addClass("glow");
-
-		} else {
-			$(this).removeClass("glow");
+		if (scroll >= elemPos - windowHeight){
+		$(this).addClass('smoothTextAppear');// 画面内に入ったらsmoothTextAppearというクラス名を追記
 		}
-	});
+		});	
 }
+
+
 
 // 画面をスクロールをしたら動かしたい場合の記述
 $(window).scroll(function () {
-	GlowAnimeControl();/* アニメーション用の関数を呼ぶ*/
+	SmoothTextAnime();/* アニメーション用の関数を呼ぶ*/
 });// ここまで画面をスクロールをしたら動かしたい場合の記述
 
 // 画面が読み込まれたらすぐに動かしたい場合の記述
 $(window).on('load', function () {
-	//spanタグを追加する
-	var element = $(".glowAnime");
-	element.each(function () {
-		var text = $(this).text();
-		var textbox = "";
-		text.split('').forEach(function (t, i) {
-			if (t !== " ") {
-				if (i < 10) {
-					textbox += '<span style="animation-delay: .' + i + 's;">' + t + '</span>';
-				} else {
-					var n = i / 10;
-					textbox += '<span style="animation-delay: ' + n + 's;">' + t + '</span>';
-				}
-
-			} else {
-				textbox += t;
-			}
-		});
-		$(this).html(textbox);
-	});
-
-	GlowAnimeControl();/* アニメーション用の関数を呼ぶ*/
+	SmoothTextAnime();/* アニメーション用の関数を呼ぶ*/
 });// ここまで画面が読み込まれたらすぐに動かしたい場合の記述
 
-$(".gallery").modaal({
-	type: 'image',
-	overlay_close:true,//モーダル背景クリック時に閉じるか
-	before_open:function(){// モーダルが開く前に行う動作
-		$('html').css('overflow-y','hidden');/*縦スクロールバーを出さない*/
-	},
-	after_close:function(){// モーダルが閉じた後に行う動作
-		$('html').css('overflow-y','scroll');/*縦スクロールバーを出す*/
-	}
+
+
+
+
+
+
+function fadeAnime(){
+
+	// ふわっ
+	$('.fadeUpTrigger').each(function(){ //fadeUpTriggerというクラス名が
+	  var elemPos = $(this).offset().top-50;//要素より、50px上の
+	  var scroll = $(window).scrollTop();
+	  var windowHeight = $(window).height();
+	  if (scroll >= elemPos - windowHeight){
+	  $(this).addClass('fadeUp');// 画面内に入ったらfadeUpというクラス名を追記
+	  }else{
+	  $(this).removeClass('fadeUp');// 画面外に出たらfadeUpというクラス名を外す
+	  }
+	  });
+  }
+  
+  // 画面をスクロールをしたら動かしたい場合の記述
+	$(window).scroll(function (){
+	  fadeAnime();/* アニメーション用の関数を呼ぶ*/
+	});// ここまで画面をスクロールをしたら動かしたい場合の記述
+  
+  // 画面が読み込まれたらすぐに動かしたい場合の記述
+	$(window).on('load', function(){
+	  fadeAnime();/* アニメーション用の関数を呼ぶ*/
+	});// ここまで画面が読み込まれたらすぐに動かしたい場合の記述
+
+
+
+// 動きのきっかけの起点となるアニメーションの名前を定義
+function BgFadeAnime(){
+
+    // 背景色が伸びて出現（左から右）
+	$('.bgLRextendTrigger').each(function(){ //bgLRextendTriggerというクラス名が
+		var elemPos = $(this).offset().top-50;//要素より、50px上の
+		var scroll = $(window).scrollTop();
+		var windowHeight = $(window).height();
+		if (scroll >= elemPos - windowHeight){
+			$(this).addClass('bgLRextend');// 画面内に入ったらbgLRextendというクラス名を追記
+		}
+	});	
+
+   // 文字列を囲う子要素
+	$('.bgappearTrigger').each(function(){ //bgappearTriggerというクラス名が
+		var elemPos = $(this).offset().top-50;//要素より、50px上の
+		var scroll = $(window).scrollTop();
+		var windowHeight = $(window).height();
+		if (scroll >= elemPos - windowHeight){
+			$(this).addClass('bgappear');// 画面内に入ったらbgappearというクラス名を追記
+		
+		}
+	});		
+}
+
+// 画面をスクロールをしたら動かしたい場合の記述
+	$(window).scroll(function (){
+		BgFadeAnime();/* アニメーション用の関数を呼ぶ*/
+	});// ここまで画面をスクロールをしたら動かしたい場合の記述
+
+// 画面が読み込まれたらすぐに動かしたい場合の記述
+	$(window).on('load', function(){
+		BgFadeAnime();/* アニメーション用の関数を呼ぶ*/
+	});// ここまで画面が読み込まれたらすぐに動かしたい場合の記述
+
+
+//上部画像の設定
+$('.gallery').slick({
+	infinite: true, //スライドをループさせるかどうか。初期値はtrue。
+	fade: true, //フェードの有効化
+	arrows: true,//左右の矢印あり
+	prevArrow: '<div class="slick-prev"></div>',//矢印部分PreviewのHTMLを変更
+	nextArrow: '<div class="slick-next"></div>',//矢印部分NextのHTMLを変更
+});
+
+//選択画像の設定
+$('.choice-btn').slick({
+	infinite: true, //スライドをループさせるかどうか。初期値はtrue。
+	slidesToShow: 8, //表示させるスライドの数
+	focusOnSelect: true, //フォーカスの有効化
+	asNavFor: '.gallery', //連動させるスライドショーのクラス名
+});
+  
+//下の選択画像をスライドさせずに連動して変更させる設定。
+$('.gallery').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+	var index = nextSlide; //次のスライド番号
+	//サムネイルのslick-currentを削除し次のスライド要素にslick-currentを追加
+	$(".choice-btn .slick-slide").removeClass("slick-current").eq(index).addClass("slick-current");
 });

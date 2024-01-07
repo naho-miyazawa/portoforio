@@ -6,7 +6,11 @@
 <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
 <link rel="stylesheet" href="./css/style.css">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Shippori+Mincho:wght@400;500&display=swap" rel="stylesheet">
 <title>jami's Portoforio</title>
 </head>
 <body>
@@ -16,22 +20,46 @@
 
 <div id="wrapper">
     
-    <div id="logo"><img src="./images/titlelogo.png"></div>
+    <div id="logo"><a href="#"><img src="./images/logo03.png"></a></div>
     <div id="particles-js"></div>
     <div id="pc-menu">
         <div class="left"></div>
         <div class="center"></div>
         <div class="right">
         <nav class="menu">
+                <!-- スマホ用メニューボタン -->
+                <img id="menu-sp" src="./images/icon_menusp2.png" alt="ナビゲーションを開く" onclick="document.getElementById('nav-sp').style.display = 'block'">
+<nav id="nav-sp">
+
+
+    <img id="close" src="./images/close-sp.png" alt="ナビゲーションを閉じる" onclick="document.getElementById('nav-sp').style.display = 'none'">
+    <a class="sp-menu" href="#" onclick="document.getElementById('nav-sp').style.display = 'none'">Home</a>
+        <a class="sp-menu" href="#about-me" onclick="document.getElementById('nav-sp').style.display = 'none'">About me</a>
+        <a class="sp-menu" href="#works" onclick="document.getElementById('nav-sp').style.display = 'none'">Works</a>
+        <a class="sp-menu" href="#skills" onclick="document.getElementById('nav-sp').style.display = 'none'">Skills</a>
+        <a class="sp-menu" href="#photos" onclick="document.getElementById('nav-sp').style.display = 'none'">Photos</a>
+        <a class="sp-menu" href="#contact" onclick="document.getElementById('nav-sp').style.display = 'none'">Contact</a>
+</nav>
+
+
+
+
+
+
             <ul class="menu-list">
                 <li class="menu-item current"><a href="#"><span>Home</span><span>ホーム</span></a></li>
                 <li class="menu-item"><a href="#about-me"><span>About me</span><span>自己紹介</span></a></li>
                 <li class="menu-item"><a href="#works"><span>Works</span><span>制作作品</span></a></li>
                 <li class="menu-item"><a href="#skills"><span>Skills</span><span>スキル紹介</span></a></li>
-                <li class="menu-item"><a href="#photos"><span>photos</span><span>趣味の写真</span></a></li>
-                <li class="menu-item"><a href="#contact"><span>contact</span><span>コンタクト</span></a></li>
+                <li class="menu-item"><a href="#photos"><span>Photos</span><span>趣味の写真</span></a></li>
+                <li class="menu-item"><a href="#contact"><span>Contact</span><span>コンタクト</span></a></li>
             </ul>
         </nav>
+
+
+
+
+
         </div>
     </div>
 
@@ -39,36 +67,36 @@
 
 <main>
 <div id="about-me">
-    <h2>About me</h2>
+    <h2 class="title-h2"><span class="smoothText"><span class="smoothTextTrigger">About me</span></span></h2>
     <div id="me">
     
     <div class="left"><div class="icon"><img src="../flowerporto/images/picture.png"></div>
     </div>
     <div class="center"></div>
     <div class="right">
-    わたしについてわたしについてわたしについてわたしについて<br>
-    わたしについてわたしについてわたしについてわたしについて<br>
-    わたしについてわたしについてわたしについてわたしについて<br>
-    わたしについてわたしについてわたしについてわたしについて<br>
-    わたしについてわたしについてわたしについてわたしについて<br>
+    <span class="about-span">Jami</span>　　39歳<br>
+    趣味はピアノで、3歳から18歳まで習っていました。<br>
+    今でも大人のピアノ教室へ通っています。<br>
+    Webデザインは大人になってからとても興味を持ち<br>
+    侍エンジニアにて現在勉強をしています<br>
 
     </div>
     </div>
 </div>
 <div id="works">
-    <h2>Works</h2>
+    <h2 class="title-h2"><span class="smoothText"><span class="smoothTextTrigger">Works</span></span></h2>
     <p class="intro">今までに製作したもの</p>
     <div id="works-wrapper">
             <div id="left"></div>
             <div id="right"></div>
             <div id="center">
-            <div class="worksitem"><img src="../flowerporto/images/wokspic.png">
+            <div class="worksitem"><img class="box fadeUpTrigger" src="../flowerporto/images/wokspic.png">
                 <p>タイトル</p><p>使用スキル</p><p>HTML/css</p>
             </div>
-            <div class="worksitem2"><img src="../flowerporto/images/wokspic.png">
+            <div class="worksitem2"><img class="box fadeUpTrigger" src="../flowerporto/images/wokspic.png">
                 <p>タイトル</p><p>使用スキル</p><p>HTML/css</p>
             </div>
-            <div class="worksitem"><img src="../flowerporto/images/wokspic.png">
+            <div class="worksitem"><img class="box fadeUpTrigger" src="../flowerporto/images/wokspic.png">
                 <p>タイトル</p><p>使用スキル</p><p>HTML/css</p>
             </div>
             
@@ -79,51 +107,50 @@
 </div>
 
 <div id="skills">
-    <h2>Skills</h2>
+    <h2 class="title-h2"><span class="smoothText"><span class="smoothTextTrigger">Skills</span></span></h2>
     <div id="skills-wrapper"> 
         <div id="homepage">
-            <h4 class="glowAnime">Webサイト制作</h4>
+            <h4><span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger">HP制作</span></span></h4>
             </div>
-            <div id="skillintro">
-            <div class="skillsitem"><img src="..//flowerporto/images/htmllogo.png">
-                <p><span>HTML</span></p><p>静的なサイトを制作できます</p>
-            </div>
-            <div class="skillsitem2"><img src="..//flowerporto/images/csslogo.png">
-                    <p><span>CSS</span></p><p>静的なサイトを整えます</p>
-            </div>
-            <div class="skillsitem third"><img src="..//flowerporto/images/wordlogo.png">
-                <p><span>PHP</span></p><p>WordPressへのサイト変更ができます</p>
-            </div>
-            </div> 
-            <br>
-            <h4 class="glowAnime">プログラミング言語</h4>
-                <div id="skillintro2">
-                    <div class="skillsitem"><img src="..//flowerporto/images/jslogo.png">
-                        <p><span>JavaScript</span></p><p>動的なサイトを制作できます</p>
-                    </div>
-                    <div class="skillsitem2"><img src="..//flowerporto/images/jquerylogo.png">
-                            <p><span>jQuery</span></p><p>動的なサイトを整えます</p>
-                    </div>
-                    <div class="skillsitem third"><img src="..//flowerporto/images/phplogo.png">
-                        <p><span>PHP</span></p><p>WordPressへのサイト変更ができます</p>
-                    </div>
-                    </div>
+            <ul class="skillintro">
+            <li class="skillsitem"><img src="..//flowerporto/images/htmllogo.png">
+                <div class="neon"><p"><span>HTML</span></p></div><p>静的なサイトを制作可能</p>
+            </li>
+            <li class="skillsitem"><img src="..//flowerporto/images/csslogo.png">
+                    <p><span>CSS</span></p><p>静的なサイトを調整可能</p>
+            </li>
+            <li class="skillsitem"><img src="..//flowerporto/images/wordlogo.png">
+                <p><span>WordPress</span></p><p>WordPressサイト制作可能</p>
+            </li>
+            </ul> 
+            <<h4><span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger">プログラミング言語</span></span></h4>
+                <ul class="skillintro2">
+                    <li class="skillsitem"><img src="..//flowerporto/images/jslogo.png">
+                        <p><span>JavaScript</span></p><p>動的なサイトを制作可能</p>
+                    </li>
+                    <li class="skillsitem"><img src="..//flowerporto/images/jquerylogo.png">
+                            <p><span>jQuery</span></p><p>動的なサイトを調整可能</p>
+                    </li>
+                    <li class="skillsitem"><img src="..//flowerporto/images/phplogo.png">
+                        <p><span>PHP</span></p><p>WordPressへのサイト変更可能</p>
+                    </li>
+                </ul>
                 
             
 
-                    <h4 class="glowAnime">デザイン</h4>
-                <div id="skillintro3">
-                    <div class="skillsitem"><img src="..//flowerporto/images/jslogo.png">
-                        <p><span>JavaScript</span></p><p>動的なサイトを制作できます</p>
-                    </div>
-                    <div class="skillsitem2"><img src="..//flowerporto/images/jquerylogo.png">
-                        <p><span>jQuery</span></p><p>動的なサイトを整えます</p>
-                    </div>
-                    <div class="skillsitem third"><img src="..//flowerporto/images/phplogo.png">
-                        <p><span>PHP</span></p><p>WordPressへのサイト変更ができます</p>
-                    </div>
+                <h4><span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger">デザイン</span></span></h4>
+                <li class="skillintro3">
+                    <li class="skillsitem"><img src="..//flowerporto/images/xdlogo.png">
+                        <p><span>Adobe XD</span></p><p>静的・動的なデザインカンプの作成</p>
+                    </li>
+                    <li class="skillsitem">
+                        <p><span></span></p><p></p>
+                    </li>
+                    <li class="skillsitem">
+                        <p><span></span></p><p></p>
+                    </li>
                     
-                    </div>
+                </ulv>
                 </div>
             </div>
         </div>
@@ -133,30 +160,101 @@
 
 
 <div id="photos">
-    <h2>Photos(hobby)</h2>
-    <p class="p-photo">画像クリックでモーダルウィンドウが開きます</p>
+    <h2 class="title-h2"><span class="smoothText"><span class="smoothTextTrigger">Photos(hobby)</span></span></h2>
+    <p class="p-photo">趣味で撮影した写真をスライドショーで見られます</p>
     <div id="photolist">
-        <ul class="gallery-list">
-            <li><a href="../flowerporto/images/nemophira.jpg" class="gallery" data-group="gallery"><img src="../flowerporto/images/nemophira.png" alt=""></a></li>
-            <li><a href="../flowerporto/images/redrose.jpg" class="gallery" data-group="gallery"><img src="../flowerporto/images/redrose.png" alt=""></a></li>
-            <li><a href="../flowerporto/images/ajisai.jpg" class="gallery" data-group="gallery"><img src="../flowerporto/images/ajisai.png" alt=""></a></li>
-            <li><a href="../flowerporto/images/whiterose.jpg" class="gallery" data-group="gallery"><img src="../flowerporto/images/whiterose.png" alt=""></a></li>
-            <li><a href="../flowerporto/images/keitou.jpg" class="gallery" data-group="gallery"><img src="../flowerporto/images/keitou.png" alt=""></a></li>
-            <li><a href="../flowerporto/images/momo.jpg" class="gallery" data-group="gallery"><img src="../flowerporto/images/momo.png" alt=""></a></li>
-            <li><a href="../flowerporto/images/hana01.jpg" class="gallery" data-group="gallery"><img src="../flowerporto/images/hana01.png" alt=""></a></li>
-            <li><a href="../flowerporto/images/flower02.jpg" class="gallery" data-group="gallery"><img src="../flowerporto/images/flower02.png" alt=""></a></li>
-            <li><a href="../flowerporto/images/flower03.jpg" class="gallery" data-group="gallery"><img src="../flowerporto/images/flower03.png" alt=""></a></li>
-            <li><a href="../flowerporto/images/flower04.jpg" class="gallery" data-group="gallery"><img src="../flowerporto/images/flower04.png" alt=""></a></li>
-            <li><a href="../flowerporto/images/flower05.jpg" class="gallery" data-group="gallery"><img src="../flowerporto/images/flower05.png" alt=""></a></li>
-            <li><a href="../flowerporto/images/tutuji.jpg" class="gallery" data-group="gallery"><img src="../flowerporto/images/tutuji.png" alt=""></a></li>
+        <ul class="gallery">
+            <li><img src="../flowerporto/images/nemophira.png" alt=""></li>
+            <li><img src="../flowerporto/images/redrose.jpg" alt=""class=""></li>
+            <li><img src="../flowerporto/images/ajisai.jpg" alt=""></li>
+            <li><img src="../flowerporto/images/whiterose.jpg" alt=""></li>
+            <li><img src="../flowerporto/images/keitou.jpg" alt=""></li>
+            <li><img src="../flowerporto/images/momo.jpg" alt=""></li>
+            <li><img src="../flowerporto/images/hana01.jpg" alt=""></li>
+            <li><img src="../flowerporto/images/flower02.jpg" alt=""></li>
+            <li><img src="../flowerporto/images/flower03.jpg" alt=""></li>
+            <li><img src="../flowerporto/images/flower04.jpg" alt=""></li>
+            <li><img src="../flowerporto/images/flower05.jpg" alt=""></li>
+            <li><img src="../flowerporto/images/tutuji.jpg" alt=""></li>
             </ul>
+
+            <ul class="choice-btn">
+                <li><img src="../flowerporto/images/nemophira.png" alt=""></li>
+                <li><img src="../flowerporto/images/redrose.png" alt=""class=""></li>
+                <li><img src="../flowerporto/images/ajisai.png" alt=""></li>
+                <li><img src="../flowerporto/images/whiterose.png" alt=""></li>
+                <li><img src="../flowerporto/images/keitou.png" alt=""></li>
+                <li><img src="../flowerporto/images/momo.png" alt=""></li>
+                <li><img src="../flowerporto/images/hana01.png" alt=""></li>
+                <li><img src="../flowerporto/images/flower02.png" alt=""></li>
+                <li><img src="../flowerporto/images/flower03.png" alt=""></li>
+                <li><img src="../flowerporto/images/flower04.png" alt=""></li>
+                <li><img src="../flowerporto/images/flower05.png" alt=""></li>
+                <li><img src="../flowerporto/images/tutuji.png" alt=""></li>
+                </ul>   
+ 
 </div>
 </div>
+
+
+<div id="contact">
+    <h2 class="title-h2"><span class="smoothText"><span class="smoothTextTrigger">Contact</span></span></h2>
+    <div class="contact-wrapper">
+        <div class="contact-form">
+                <form id="contact" action="https://api.staticforms.xyz/submit" method="post">
+                    <input type="text" name="honeypot" style="display:none">
+                    <!-- STATIC FORMSのアクセスキー -->
+                    <input type="hidden" name="accessKey" value="38abdc6a-89a8-4a20-88e0-d4c07a5d39d7">
+                    <!--メールのタイトル-->
+                    <input type="hidden" name="subject" value="お問い合わせフォーム" />
+                    <!--送信先のメールアドレスをvalueに設定する-->
+                    <input type="hidden" name="replyTo" value="〇〇〇@△△△.com">
+                    <!--redirectToのURLは公開後のURLへリンクする-->
+                    <input type="hidden" name="redirectTo" value="">
+                <div class="container">
+                  <div class="head">
+                    <h2>お問い合わせ</h2>
+                  </div>
+                  <input type="text" name="name" placeholder="お名前" /><br />
+                  <input  type="email" name="email" placeholder="メールアドレス" /><br />
+                  <textarea type="text" name="message" placeholder="お問い合わせ内容"></textarea><br />
+                  <div class="message">Message Sent</div>
+                  <button id="submit" type="submit">
+                    送信
+                  </button>
+                </div>
+              </form>
+        </div>
+        </div>
+</section>
 </main>
+
+<footer>
+    <p id="page-top"><a href="#">Page Top</a></p>
+    <div id="footer-wrapper">
+        <div id="logo"><a href="#"><img src="./images/titlelogo.png"></a></div>
+        <ul class="menu-list">
+            <li class="menu-item current"><a href="#"><span>Home</span><span>ホーム</span></a></li>
+            <li class="menu-item"><a href="#about-me"><span>About me</span><span>自己紹介</span></a></li>
+            <li class="menu-item"><a href="#works"><span>Works</span><span>制作作品</span></a></li>
+            <li class="menu-item"><a href="#skills"><span>Skills</span><span>スキル紹介</span></a></li>
+            <li class="menu-item"><a href="#photos"><span>photos</span><span>趣味の写真</span></a></li>
+            <li class="menu-item"><a href="#contact"><span>contact</span><span>コンタクト</span></a></li>
+           
+        </ul>
+        <div id="twitter"><a href="https://twitter.com/home"><img class="xlink" src="../flowerporto/images/logo-black.png"></a></div>
+
+        <div class="copy">
+            <small>© Jami's Portoforio 2023</small>
+        
+    </div>
+
+
 <script src="./js/jquery-3.7.1.min.js"></script>
 <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script src="./js/sakura.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="./js/script.js"></script>
 
 </body>
