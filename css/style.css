@@ -9,7 +9,7 @@ body {
 #splash {
     /*fixedで全面に固定*/
 	position: fixed;
-	z-index: 99;
+	z-index: 99999;
 	width: 100%;
 	height: 100%;
 	background:#f1dcdc;
@@ -22,7 +22,7 @@ body {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-    z-index: 999;
+  z-index: 99999;
 	width: 100%;
 	transform: translate(-50%, -50%);
 	color: #fff;
@@ -52,6 +52,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    z-index: 888;
     
 }
 
@@ -79,16 +80,19 @@ body {
   z-index: 99;
 }
 #page-top a {
-  background: #72C7CA;
   text-decoration: none;
   color: #fff;
-  width: 60px;
+  width: 90px;
   padding: 28px 5px;
   text-align: center;
   display: block;
-  border-radius: 90px;
+  background-image: url(../images/sakura-icon01-cs2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   opacity: 0.9;
   transition: all .3s ease;
+  font-size: 12px;
+  text-align: center;
 }
 #page-top a:hover {
   text-decoration: none;
@@ -200,9 +204,11 @@ body {
 
   /* ハンバーガーメニュー */
   #menu-sp {
-    position: absolute;
-    top: 100px;
-    right: 100px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    z-index: 999;
   }
 
 
@@ -210,13 +216,13 @@ body {
    /* 初期状態、レイアウトと非表示設定 */
    #nav-sp {
     background-color: #fdeff2;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     height: 100%;
     width: 100%;
     display: none;
-    z-index: 100;
+    z-index: 9999;
   }
 
 
@@ -257,7 +263,6 @@ body {
 
 .title-h2 {
     font-size: 40px;
-    margin-top: 100px;
     text-align: center;
     color: #826060; 
     font-family: 'Josefin Sans', sans-serif;
@@ -284,15 +289,17 @@ span.smoothTextTrigger.smoothTextAppear{
 
 #me {
     width: 100%;
-    height: 500px;
     background: url(../images/sakurahana.png);
     background-color: #fff;
     display: flex;
 }
 
+.left {
+  width: 300px;
+}
+
 .icon img {
-    width: 300px;
-    height: 300px;
+  width: 300px;
 }
 
 #me .left {
@@ -330,15 +337,33 @@ span.smoothTextTrigger.smoothTextAppear{
 }
 
 @media (max-width: 768px) {
-    #center {
+    #me {
         display: flex;
         flex-direction: column;
         text-align: center;
+
     }
+
+    #me .left {
+      padding: 10px;
+      text-align: center;
+      margin: 0 auto;
+      width: 250px;
+    }
+
+    #me .right {
+      padding: 10px;
+      line-height: 2rem;
+      margin: 0 auto;
+      font-size: 14px;
+  }
+
 }
     
 
-
+#works {
+  padding-top: 100px;
+}
 
 /* fadeUp */
 
@@ -394,6 +419,9 @@ span.smoothTextTrigger.smoothTextAppear{
 }
 
 
+#skills {
+  padding-top: 100px;
+}
 
 h4 {
     text-align: center;
@@ -403,7 +431,13 @@ h4 {
     margin-bottom: 80px;
 }
 
-
+@media (max-width: 768px) {
+  #center {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+  }
+}
 
 
 
@@ -556,6 +590,9 @@ h4 {
     }
 }
 
+#photos {
+  padding-top: 100px;
+}
 
 .photos {
     width: 100%;
@@ -698,11 +735,12 @@ list-style:none;
 
 
 #contact {
-    margin: 80px auto 300px auto;
+    margin: 0 auto 300px auto;
     background-color: #fff;
     width: 100%;
     height: 500px;
     max-width: 960px;
+    padding-top: 100px;
   }
   
 .contact-title {
